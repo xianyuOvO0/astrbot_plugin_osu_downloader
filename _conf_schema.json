@@ -1,0 +1,8 @@
+{
+  "max_size_mb": {
+    "type": "int",
+    "label": "最大文件大小 (MB)",
+    "description": "超过此大小的谱面将不下载，防止文件过大发送失败。默认 20 MB。",
+    "default": 20
+  }
+}
