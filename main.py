@@ -109,7 +109,7 @@ class OsuDownloader(star.Star):
 
         file_path = await self.download_osz(set_id)
         if not file_path or not os.path.exists(file_path):
-            await event.send(MessageChain([Plain("❌ 下载失败喵~，谱面可能过大、不存在或网络出现问题")]))
+            await event.send(MessageChain([Plain("❌ 下载失败喵~，谱面可能不存在或网络出现问题")]))
             return
 
         try:
