@@ -34,5 +34,5 @@
 
 ## 致谢
 
-- 镜像站 [Sayobot osu!](https://osu.sayobot.cn/) [osu.direct](https://osu.direct) 和 [catboy.best](https://catboy.best) 提供下载服务
+- 镜像站 [osu.sayobot](https://osu.sayobot.cn/) ，[osu.direct](https://osu.direct) 和 [catboy.best](https://catboy.best) 提供下载服务
 
