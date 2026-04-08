@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 osu谱面下载器
-- 临时文件存放于 /AstrBot/data/temp/osu/
-- 优先 osu.direct，备用 catboy.best
+- 临时文件存放于 /AstrBot/data/plugin_data/astrbot_plugin_osu_downloader/cache/
+- 优先 sayobot，osu.direct，备用 catboy.best
 - 增加文件存在性验证与详细日志
 """
 
@@ -26,11 +26,12 @@ class OsuDownloader(star.Star):
         self.max_size_bytes = self.max_size_mb * 1024 * 1024
         self.session = None
 
-        # 使用 AstrBot 数据目录下的 temp/osu 作为临时文件存放点
-        self.temp_dir = "/AstrBot/data/temp/osu"
+        # 使用 AstrBot 数据目录下的 plugin_data/astrbot_plugin_osu_downloader/cache/ 作为临时文件存放点
+        self.temp_dir = "/AstrBot/data/plugin_data/astrbot_plugin_osu_downloader/cache/"
         os.makedirs(self.temp_dir, exist_ok=True)
 
         self.mirrors = [
+            "https://txy1.sayobot.cn/beatmaps/download/full/{}",
             "https://osu.direct/api/d/{}",
             "https://catboy.best/d/{}",
         ]
@@ -114,14 +115,17 @@ class OsuDownloader(star.Star):
 
         try:
             file_name = os.path.basename(file_path)
-            await event.send(MessageChain([File(name=file_name, file=file_path)]))
-            await event.send(MessageChain([Plain(f"✅ 已发送 {file_name}喵~")]))
+            if os.path.exists(file_path):
+                await event.send(MessageChain([File(name=file_name, file=file_path)]))
+                await event.send(MessageChain([Plain(f"✅ 已发送 {file_name}")]))
+            else:
+                await event.send(MessageChain([Plain("❌ 文件不存在，可能下载未完成")]))
         except Exception as e:
             logger.error(f"发送文件失败: {e}")
-            await event.send(MessageChain([Plain(f"❌ 发送文件失败: {e}喵~")]))
+            await event.send(MessageChain([Plain(f"❌ 发送文件失败")]))
         finally:
             if os.path.exists(file_path):
-                os.remove(file_path)
+                 os.remove(file_path)
 
 
 def get_star(context, config):
