@@ -5,6 +5,7 @@
 
 - 🔗 自动识别 `https://osu.ppy.sh/beatmapsets/数字` 链接
 - 📥 从以下镜像站下载（按顺序尝试）：
+  - osu.sayobot
   - osu.direct
   - catboy.best
 - 📦 自动发送 `.osz` 文件到群聊
