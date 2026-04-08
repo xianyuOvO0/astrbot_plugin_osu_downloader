@@ -1,7 +1,6 @@
 # osu谱面下载器 for AstrBot
 
-自动识别 osu! 谱面链接，从多个镜像站下载 `.osz` 文件并发送到群聊。sayobot镜像站待恢复后补充。
-
+自动识别 osu! 谱面链接，从多个镜像站下载 `.osz` 文件并发送到群聊。
 ## 功能特性
 
 - 🔗 自动识别 `https://osu.ppy.sh/beatmapsets/数字` 链接
@@ -35,5 +34,5 @@
 
 ## 致谢
 
-- 镜像站 [osu.direct](https://osu.direct) 和 [catboy.best](https://catboy.best) 提供下载服务
+- 镜像站 [Sayobot osu!](https://osu.sayobot.cn/) [osu.direct](https://osu.direct) 和 [catboy.best](https://catboy.best) 提供下载服务
 
