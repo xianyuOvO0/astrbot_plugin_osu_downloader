@@ -117,12 +117,12 @@ class OsuDownloader(star.Star):
             file_name = os.path.basename(file_path)
             if os.path.exists(file_path):
                 await event.send(MessageChain([File(name=file_name, file=file_path)]))
-                await event.send(MessageChain([Plain(f"✅ 已发送 {file_name}")]))
+                await event.send(MessageChain([Plain(f"✅ 已发送 {file_name}喵~")]))
             else:
-                await event.send(MessageChain([Plain("❌ 文件不存在，可能下载未完成")]))
+                await event.send(MessageChain([Plain("❌ 文件不存在，可能下载未完成喵~")]))
         except Exception as e:
             logger.error(f"发送文件失败: {e}")
-            await event.send(MessageChain([Plain(f"❌ 发送文件失败")]))
+            await event.send(MessageChain([Plain(f"❌ 发送文件失败喵~")]))
         finally:
             if os.path.exists(file_path):
                  os.remove(file_path)
