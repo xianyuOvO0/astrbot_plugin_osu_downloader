@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 osu谱面下载器
 - 临时文件存放于 /AstrBot/data/plugin_data/astrbot_plugin_osu_downloader/cache/
