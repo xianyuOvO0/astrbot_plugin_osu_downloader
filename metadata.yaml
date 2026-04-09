@@ -4,4 +4,7 @@ desc: "自动识别 osu! 谱面链接，从 osu.sayobot , osu.direct 或 catboy.
 author: "xianyuOvO"
 repo: "https://github.com/xianyuOvO0/astrbot_plugin_osu_downloader"
 version: "1.0.1"
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.13.0"
 config: true
