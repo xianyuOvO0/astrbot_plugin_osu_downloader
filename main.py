@@ -100,6 +100,7 @@ class OsuDownloader(star.Star):
 
     @filter.regex(r"https?://osu\.ppy\.sh/beatmapsets/(\d+)")
     async def on_osu_link(self, event: AstrMessageEvent):
+        """识别 osu! 谱面链接并自动下载 .osz 文件"""
         match = re.search(r"https?://osu\.ppy\.sh/beatmapsets/(\d+)", event.message_str)
         if not match:
             return
