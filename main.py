@@ -25,8 +25,9 @@ class OsuDownloader(star.Star):
         self.max_size_bytes = self.max_size_mb * 1024 * 1024
         self.session = None
 
-        # 使用 AstrBot 数据目录下的 plugin_data/astrbot_plugin_osu_downloader/cache/ 作为临时文件存放点
-        self.temp_dir = "/AstrBot/data/plugin_data/astrbot_plugin_osu_downloader/cache/"
+        # 动态获取数据目录
+        data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
+        self.temp_dir = os.path.join(data_dir, "plugin_data", "astrbot_plugin_osu_downloader", "cache")
         os.makedirs(self.temp_dir, exist_ok=True)
 
         self.mirrors = [
