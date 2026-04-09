@@ -2,7 +2,7 @@
 osu谱面下载器
 - 临时文件存放于 /AstrBot/data/plugin_data/astrbot_plugin_osu_downloader/cache/
 - 优先 sayobot，osu.direct，备用 catboy.best
-- 增加文件存在性验证与详细日志
+- 增加文件存在性验证
 """
 
 import re
