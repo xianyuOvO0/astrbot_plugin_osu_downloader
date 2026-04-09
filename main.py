@@ -123,6 +123,8 @@ class OsuDownloader(star.Star):
         except Exception as e:
             logger.error(f"发送文件失败: {e}")
             await event.send(MessageChain([Plain(f"❌ 发送文件失败喵~")]))
+
+        #下载完成后删除临时文件
         finally:
             if os.path.exists(file_path):
                  os.remove(file_path)
